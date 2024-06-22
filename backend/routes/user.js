@@ -67,38 +67,38 @@ route.post('/signup', async (res,req)=>{
     })
 
 
-route.post ('./singin', async (req,res) =>{
+// route.post ('./singin', async (req,res) =>{
 
     
-    const {success} = signinBody.safeParse(req.body)
+//     const {success} = signinBody.safeParse(req.body)
 
-    if(!success){
-        return req.json({
-                message : "invalid input "
-        })
-    }
+//     if(!success){
+//         return req.json({
+//                 message : "invalid input "
+//         })
+//     }
 
-  const user = await User.findOne({
-    username: req.body.username,
-    password :req.body.password
-  })
-   if(user) {
-     const token =jwt.sign({
-        userId : user_id
-     } , JWT_TOKEN)
+//   const user = await User.findOne({
+//     username: req.body.username,
+//     password :req.body.password
+//   })
+//    if(user) {
+//      const token =jwt.sign({
+//         userId : user_id
+//      } , JWT_TOKEN)
 
-     res.json({
-        token : token
-     })
+//      res.json({
+//         token : token
+//      })
 
-   }
-   return;
+//    }
+//    return;
 
-   res.status(411).json({
-    message: "Error while logging in"
-})
+//    res.status(411).json({
+//     message: "Error while logging in"
+// })
 
-})
+// })
 
 
 
